@@ -1,5 +1,5 @@
-const API_KEY = "YOUR_API_KEY"; // replace with your real key
-const CX = "YOUR_CX"; // replace with your search engine ID
+const API_KEY = "AIzaSyAsscFyli7AR5vJQtfUoDV6adHlK3Bh-C8"; 
+const CX = "909f5c55f2a504e45"; 
 
 async function search() {
   const query = document.getElementById("searchBox").value.trim();
