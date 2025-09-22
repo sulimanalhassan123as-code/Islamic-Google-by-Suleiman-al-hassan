@@ -1,60 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Islamic Google</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #0f4c75, #20B2AA);
-      color: white;
       text-align: center;
-      padding: 2rem;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0f4c75, #3282b8);
+      color: white;
     }
-    #searchBox {
+    header {
+      padding: 20px;
+    }
+    input[type="text"] {
       width: 60%;
       padding: 10px;
-      font-size: 1.2rem;
+      font-size: 16px;
       border-radius: 8px;
       border: none;
+      margin: 20px 0;
     }
     button {
       padding: 10px 20px;
-      font-size: 1.2rem;
-      margin-left: 10px;
-      background: gold;
+      font-size: 16px;
       border: none;
       border-radius: 8px;
+      background: #ffd369;
       cursor: pointer;
     }
     #results {
-      margin-top: 2rem;
-      text-align: left;
+      margin: 20px auto;
       max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      background: rgba(255,255,255,0.1);
-      padding: 1rem;
+      background: white;
+      color: black;
       border-radius: 8px;
+      padding: 20px;
     }
     .result {
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #ddd;
+      margin-bottom: 15px;
+      text-align: left;
     }
     .result a {
-      color: gold;
+      color: #0f4c75;
+      text-decoration: none;
       font-weight: bold;
+    }
+    footer {
+      margin-top: 30px;
+      padding: 10px;
+      background: #1b262c;
+    }
+    footer a {
+      color: #ffd369;
       text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <h1>Islamic Google</h1>
-  <input type="text" id="searchBox" placeholder="Search about Islam...">
-  <button onclick="performSearch()">Search</button>
+  <header>
+    <h1>Islamic Google</h1>
+    <p>Search for Islamic knowledge and resources</p>
+    <input type="text" id="searchBox" placeholder="Type your query..." />
+    <button onclick="search()">Search</button>
+  </header>
+
   <div id="results"></div>
+
+  <footer>
+    <p>Contact: <a href="mailto:sulleyalhassan.178.as@gmail.com">sulleyalhassan.178.as@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/233599931348" target="_blank">+233599931348</a></p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
