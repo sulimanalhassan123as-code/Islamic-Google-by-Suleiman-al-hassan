@@ -4,7 +4,7 @@ const CX = "909f5c55f2a504e45";
 async function search() {
   const query = document.getElementById("searchBox").value.trim();
   if (!query) {
-    showMessage("Please enter a search query.");
+    showMessage("search about Islam.");
     return;
   }
 
