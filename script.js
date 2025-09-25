@@ -1,5 +1,5 @@
-const API_KEY =AIzaSyD4hutA0VN9wMgKuOY7PFox9mpRkzlOHv4
-const CX =b3e9a30c9419d4590
+const API_KEY
+const CX
 
 async function search() {
   const query = document.getElementById("searchBox").value.trim();
