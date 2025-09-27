@@ -1,80 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Islamic Google</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #0f4c75, #3282b8);
-      color: white;
-    }
-    header {
-      padding: 20px;
-    }
-    input[type="text"] {
-      width: 60%;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 8px;
-      border: none;
-      margin: 20px 0;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      background: #ffd369;
-      cursor: pointer;
-    }
-    #results {
-      margin: 20px auto;
-      max-width: 800px;
-      background: white;
-      color: black;
-      border-radius: 8px;
-      padding: 20px;
-    }
-    .result {
-      margin-bottom: 15px;
-      text-align: left;
-    }
-    .result a {
-      color: #0f4c75;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    footer {
-      margin-top: 30px;
-      padding: 10px;
-      background: #1b262c;
-    }
-    footer a {
-      color: #ffd369;
-      text-decoration: none;
-    }
-  </style>
-</head>
+ 
 <body>
-  <header>
-    <h1>Islamic Google</h1>
-    <p>Search for Islamic knowledge and resources</p>
-    <input type="text" id="searchBox" placeholder="Type your query..." />
-    <button onclick="search()">Search</button>
-  </header>
 
-  <div id="results"></div>
+    <div class="background-lines"></div>
 
-  <footer>
-    <p>Contact: <a href="mailto:sulleyalhassan.178.as@gmail.com">sulleyalhassan.178.as@gmail.com</a></p>
-    <p>WhatsApp: <a href="https://wa.me/233599931348" target="_blank">+233599931348</a></p>
-  </footer>
+    <header>
+        <!-- Your navigation remains the same -->
+        <nav>
+            <div class="logo">Islamic Google</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#submit">Submit Content</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <script src="script.js"></script>
+    <main id="home">
+        <section class="search-section">
+            <h1>Your Guide to Authentic Islamic Knowledge</h1>
+            <p class="intro-text">Search for articles, Quranic verses, Hadith, and scholarly interpretations from trusted sources.</p>
+            <div class="search-bar-container">
+                <!-- MODIFICATION 1 & 2: Added id, removed action/target -->
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Search for Islamic topics..." class="search-input" required>
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+            </div>
+
+            <!-- ADDITION: This is where results will appear -->
+            <div id="search-results-container"></div>
+        </section>
+
+        <!-- The rest of your featured content section can go here -->
+
+    </main>
+
+    <footer id="about">
+        <!-- Your footer remains the same -->
+        <div class="footer-content">
+            <h3>About Islamic Google</h3>
+            <p>Our mission is to provide a centralized online resource dedicated to accurate and comprehensive information about Islam.</p>
+            <p><strong>Developed by:</strong> Slave Learn and Hustle</p>
+            <div class="contact-info">
+                <p><strong>Contact Us:</strong></p>
+                <p>Email: <a href="mailto:sulimanalhassan.123.as@gmail.com">sulimanalhassan.123.as@gmail.com</a></p>
+                <p>WhatsApp: +233599931348</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ADDITION: Link to your JavaScript file -->
+    <script src="script.js"></script>
+
 </body>
-</html>
