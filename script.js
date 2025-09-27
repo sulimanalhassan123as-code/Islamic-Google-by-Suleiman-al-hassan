@@ -1,52 +1,64 @@
-const API_KEY
-const CX
+// Located in your main folder (islamic-google/script.js)
 
-async function search() {
-  const query = document.getElementById("searchBox").value.trim();
-  if (!query) {
-    showMessage("Please enter a search query.");
-    return;
+const searchForm = document.getElementById('search-form');
+const searchInput = document.getElementById('search-input');
+const resultsContainer = document.getElementById('search-results-container');
+
+searchForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  const query = searchInput.value;
+  if (query) {
+    fetchResults(query);
   }
+});
 
-  const url = `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CX}&q=${encodeURIComponent(query)}`;
+async function fetchResults(query) {
+  resultsContainer.innerHTML = '<p class="loading">Searching...</p>';
+
+  // This is the new URL. It points to our own secret function.
+  const apiUrl = `/.netlify/functions/search?q=${encodeURIComponent(query)}`;
 
   try {
-    const res = await fetch(url);
-    if (!res.ok) {
-      throw new Error(`API error: ${res.status}`);
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-
-    const data = await res.json();
-    if (data.items && data.items.length > 0) {
-      displayResults(data.items);
-    } else {
-      showMessage("No results found or quota exceeded.");
-    }
-  } catch (err) {
-    console.error(err);
-    showMessage("Something went wrong. Please try again later.");
+    const data = await response.json();
+    displayResults(data);
+  } catch (error) {
+    console.error("Error fetching search results:", error);
+    resultsContainer.innerHTML = '<p class="error">Failed to fetch search results.</p>';
   }
 }
 
-function displayResults(items) {
-  const resultsDiv = document.getElementById("results");
-  resultsDiv.innerHTML = "";
+function displayResults(data) {
+  resultsContainer.innerHTML = ''; // Clear previous results
 
-  items.forEach(item => {
-    const div = document.createElement("div");
-    div.classList.add("result");
-    div.innerHTML = `
-      <a href="${item.link}" target="_blank">${item.title}</a>
-      <p>${item.snippet}</p>
-    `;
-    resultsDiv.appendChild(div);
-  });
-}
+  if (data.items && data.items.length > 0) {
+    data.items.forEach(item => {
+      const resultElement = document.createElement('div');
+      resultElement.classList.add('search-result-item');
 
-function showMessage(msg) {
-  const resultsDiv = document.getElementById("results");
-  resultsDiv.innerHTML = `<p>${msg}</p>`;
+      const titleElement = document.createElement('a');
+      titleElement.href = item.link;
+      titleElement.textContent = item.title;
+      titleElement.target = '_blank';
+      titleElement.classList.add('result-title');
+
+      const snippetElement = document.createElement('p');
+      snippetElement.textContent = item.snippet;
+      snippetElement.classList.add('result-snippet');
+
+      const urlElement = document.createElement('p');
+      urlElement.textContent = item.formattedUrl;
+      urlElement.classList.add('result-url');
+
+      resultElement.appendChild(titleElement);
+      resultElement.appendChild(urlElement);
+      resultElement.appendChild(snippetElement);
+      resultsContainer.appendChild(resultElement);
+    });
+  } else {
+    resultsContainer.innerHTML = '<p>No results found for your query.</p>';
+  }
 }
-<script async src="https://cse.google.com/cse.js?cx=909f5c55f2a504e45">
-</script>
-<div class="gcse-searchresults-only"></div>
