@@ -1,55 +1,69 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Google - Your Guide to Islamic Knowledge</title>
+
+    <!-- THIS IS THE LINE THAT FIXES THE COLORS AND DESIGN -->
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
 <body>
 
-    <div class="background-lines"></div>
+    <div class="background-lines"></div>
 
-    <header>
-        <!-- Your navigation remains the same -->
-        <nav>
-            <div class="logo">Islamic Google</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#submit">Submit Content</a></li>
-                <li><a href="#about">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header>
+        <nav>
+            <div class="logo">Islamic Google</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#submit">Submit Content</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <main id="home">
-        <section class="search-section">
-            <h1>Your Guide to Authentic Islamic Knowledge</h1>
-            <p class="intro-text">Search for articles, Quranic verses, Hadith, and scholarly interpretations from trusted sources.</p>
-            <div class="search-bar-container">
-                <!-- MODIFICATION 1 & 2: Added id, removed action/target -->
-                <form id="search-form">
-                    <input type="text" id="search-input" placeholder="Search for Islamic topics..." class="search-input" required>
-                    <button type="submit" class="search-button">Search</button>
-                </form>
-            </div>
+    <main id="home">
+        <section class="search-section">
+            <h1>Your Guide to Authentic Islamic Knowledge</h1>
+            <p class="intro-text">Search for articles, Quranic verses, Hadith, and scholarly interpretations from trusted sources.</p>
+            <div class="search-bar-container">
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Search for Islamic topics..." class="search-input" required>
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+            </div>
 
-            <!-- ADDITION: This is where results will appear -->
-            <div id="search-results-container"></div>
-        </section>
+            <div id="search-results-container"></div>
+        </section>
 
-        <!-- The rest of your featured content section can go here -->
+        <section class="featured-content">
+            <h2>Featured Topics</h2>
+            <div class="carousel-placeholder">
+                <div class="card">The Pillars of Islam</div>
+                <div class="card">The Life of the Prophet</div>
+                <div class="card">Understanding the Quran</div>
+            </div>
+        </section>
+    </main>
 
-    </main>
+    <footer id="about">
+        <div class="footer-content">
+            <h3>About Islamic Google</h3>
+            <p>Our mission is to provide a centralized online resource dedicated to accurate and comprehensive information about Islam.</p>
+            <p><strong>Developed by:</strong> Slave Learn and Hustle</p>
+            <div class="contact-info">
+                <p><strong>Contact Us:</strong></p>
+                <p>Email: <a href="mailto:sulimanalhassan.123.as@gmail.com">sulimanalhassan.123.as@gmail.com</a></p>
+                <p>WhatsApp: +233599931348</p>
+            </div>
+        </div>
+    </footer>
 
-    <footer id="about">
-        <!-- Your footer remains the same -->
-        <div class="footer-content">
-            <h3>About Islamic Google</h3>
-            <p>Our mission is to provide a centralized online resource dedicated to accurate and comprehensive information about Islam.</p>
-            <p><strong>Developed by:</strong> Sulieman</p>
-            <div class="contact-info">
-                <p><strong>Contact Us:</strong></p>
-                <p>Email: <a href="mailto:sulimanalhassan.123.as@gmail.com">sulimanalhassan.123.as@gmail.com</a></p>
-                <p>WhatsApp: +233599931348</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ADDITION: Link to your JavaScript file -->
-    <script src="script.js"></script>
+    <!-- This is the connection to your working search bar -->
+    <script src="script.js"></script>
 
 </body>
+</html>
