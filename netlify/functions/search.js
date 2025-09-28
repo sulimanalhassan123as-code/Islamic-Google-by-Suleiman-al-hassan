@@ -1,19 +1,25 @@
 exports.handler = async function (event, context) {
-  const query = event.queryStringParameters.q || 'islam';
-  const apiKey = process.env.GOOGLE_API_KEY;
-  const searchEngineId = process.env.GOOGLE_SEARCH_ENGINE_ID;
-  const apiUrl = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngineId}&q=${encodeURIComponent(query)}`;
-  try {
-    const response = await fetch(apiUrl);
-    const data = await response.json();
-    return {
-      statusCode: 200,
-      body: JSON.stringify(data),
-    };
-  } catch (error) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'Failed to fetch search results.' }),
-    };
-  }
+  // This is a dummy function. It does not talk to Google.
+  // It just proves the connection is working.
+  const dummyData = {
+    items: [
+      {
+        title: "Success! The connection is working!",
+        link: "#",
+        snippet: "This is a fake result. If you see this, it means your website is now talking to the Netlify function correctly.",
+        formattedUrl: "test.com"
+      },
+      {
+        title: "Next Step: Check Google API Setup",
+        link: "#",
+        snippet: "Now we know the problem is likely with the Google Programmable Search Engine setup.",
+        formattedUrl: "test.com"
+      }
+    ]
+  };
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify(dummyData),
+  };
 };
